@@ -33,7 +33,7 @@ class ModalUploadInput
   end
 
   def upload_form
-    s3_uploader_form key: "${cleaned_filename}", id: "#{options[:resource].class.name.downcase}-#{options[:association].underscore}-uploader" do
+    s3_uploader_form key: "uploads/${cleaned_filename}", id: "#{options[:resource].class.name.downcase}-#{options[:association].underscore}-uploader" do
       file_field_tag :file, multiple: true
     end
   end
